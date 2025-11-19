@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams, Navigate, Link } from 'react-router-dom';
 import { solutions, assets } from '../data';
 import { Check, HelpCircle, ChevronLeft, Zap, Settings, ShieldCheck, Layout, ArrowRight } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const SolutionDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -26,8 +27,34 @@ const SolutionDetail: React.FC = () => {
 
   const detailImage = getSidebarImage(solution.slug, solution.category);
 
+  // Product Schema for Google
+  const productSchema = {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": solution.title,
+    "description": solution.sub,
+    "brand": {
+      "@type": "Brand",
+      "name": "Whizz-kit"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": `https://whizz-kit.com/oplossingen/${solution.slug}`,
+      "availability": "https://schema.org/InStock",
+      "priceCurrency": "EUR",
+      "price": "0.00" // Request quote
+    }
+  };
+
   return (
     <div className="bg-[#FDFDFD] min-h-screen">
+       <SEO 
+          title={solution.title} 
+          description={solution.sub} 
+          image={detailImage}
+          type="product"
+          schema={productSchema}
+       />
        
        {/* Immersive Dark Hero - Simplified without side image */}
        <div className="bg-dark relative pt-32 lg:pt-40 pb-16 lg:pb-32 overflow-hidden">
@@ -100,7 +127,7 @@ const SolutionDetail: React.FC = () => {
                             <div className="shrink-0 mt-1">
                                <div className="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center">
                                   <Check size={14} strokeWidth={3} />
-                               </div>
+                                </div>
                             </div>
                             <span className="font-sans text-dark font-medium leading-relaxed text-base lg:text-lg">{bullet}</span>
                          </div>

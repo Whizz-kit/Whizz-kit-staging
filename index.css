@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body { 
+  font-family: 'Inter', sans-serif; 
+  background-color: #FFFFFF; 
+  color: #171640; 
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 { 
+  font-family: 'Figtree', sans-serif; 
+}
+
+.font-mono { 
+  font-family: 'Fira Code', monospace; 
+}
+      
+/* Remove default focus outlines and replace with solid style */
+*:focus-visible {
+  outline: 2px solid #6157E5;
+  outline-offset: 2px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #F4F4F5; 
+}
+::-webkit-scrollbar-thumb {
+  background: #D4D4D8; 
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A1A1AA; 
+}

@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams, Navigate, Link } from 'react-router-dom';
 import { blogPosts } from '../data';
 import { ChevronLeft, Clock, Facebook, Linkedin, Twitter } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const BlogDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -11,8 +12,37 @@ const BlogDetail: React.FC = () => {
     return <Navigate to="/blog" replace />;
   }
 
+  const blogSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": post.title,
+    "image": `https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=2070&auto=format&fit=crop&seed=${post.slug}`,
+    "author": {
+      "@type": "Organization",
+      "name": "Whizz-kit Team"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Whizz-kit",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://ik.imagekit.io/fto/whizz-kit/whizz-kit-logo-vibrant-blue%20(1).png"
+      }
+    },
+    "datePublished": new Date().toISOString(), // In real app, use actual date
+    "description": post.summary
+  };
+
   return (
     <div className="bg-white min-h-screen pt-32 pb-20">
+       <SEO 
+          title={post.title} 
+          description={post.summary}
+          image={`https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=2070&auto=format&fit=crop&seed=${post.slug}`}
+          type="article"
+          schema={blogSchema}
+       />
+       
        <div className="container mx-auto px-4 lg:px-12 max-w-4xl">
           <Link to="/blog" className="inline-flex items-center text-sm font-bold font-display text-neutral-text hover:text-dark mb-8 transition-colors uppercase tracking-wider">
              <ChevronLeft size={16} className="mr-1"/> Bekijk alle artikelen

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Check, ShieldCheck, Zap, BarChart2, WifiOff, ArrowRight, CreditCard, Coins, Server, Smartphone, Layers, Calculator, QrCode, Package, Star } from 'lucide-react';
 import { solutions, testimonials, assets } from '../data';
+import SEO from '../components/SEO';
 
 const Home: React.FC = () => {
   
@@ -22,8 +23,38 @@ const Home: React.FC = () => {
     }
   };
 
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Whizz-kit",
+    "url": "https://whizz-kit.com",
+    "logo": assets.logoDark,
+    "description": "Offline-first betaaloplossingen en kassasystemen voor festivals en evenementen.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Arnhem",
+      "addressCountry": "NL"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+31-26-202-2490",
+      "contactType": "sales",
+      "availableLanguage": ["Dutch", "English"]
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/whizz-kit",
+      "https://www.instagram.com/whizzkit"
+    ]
+  };
+
   return (
     <div className="bg-[#FDFDFD]">
+      <SEO 
+        title="Offline-first betaaloplossingen voor festivals" 
+        description="Whizz-kit biedt betrouwbare kassasystemen voor festivals. Card payments, munten, RFID en statiegeld (recycle tokens) in één dashboard. Werkt 100% offline."
+        schema={organizationSchema}
+      />
+      
       {/* Full Screen Hero Section - Redesigned */}
       <section className="relative w-full min-h-[90vh] lg:min-h-screen flex items-center bg-dark overflow-hidden pt-28 lg:pt-0">
          {/* Background Image */}

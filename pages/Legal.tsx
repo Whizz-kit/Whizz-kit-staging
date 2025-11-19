@@ -1,10 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronLeft } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const Legal: React.FC = () => {
   return (
     <div className="bg-white min-h-screen pt-32 pb-20">
+      <SEO 
+        title="Privacy & Voorwaarden" 
+        description="Privacyverklaring en Algemene Voorwaarden van Whizz-kit B.V."
+        type="article"
+      />
+
       <div className="container mx-auto px-4 lg:px-8 max-w-3xl">
          <Link to="/" className="inline-flex items-center text-sm font-bold font-display text-neutral-text hover:text-dark mb-8 transition-colors uppercase tracking-wider">
             <ChevronLeft size={16} className="mr-1"/> Ga naar home

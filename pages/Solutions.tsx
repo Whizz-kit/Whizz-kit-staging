@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { solutions, assets } from '../data';
 import { ArrowRight, Layers, Check } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const Solutions: React.FC = () => {
   const paymentSolutions = solutions.filter(s => s.category === 'payment');
@@ -9,6 +10,11 @@ const Solutions: React.FC = () => {
 
   return (
     <div className="bg-[#FDFDFD] min-h-screen pb-32 pt-8">
+      <SEO 
+        title="Alle Betaaloplossingen & Festival Tools" 
+        description="Ontdek het Whizz-kit ecosysteem: Card payments, Token Only, RFID, Tap to Pay en QR Redeem voor statiegeld. Modulair inzetbaar."
+      />
+
       {/* Header */}
       <div className="container mx-auto px-4 lg:px-12 max-w-screen-2xl mt-12 lg:mt-8 mb-16 lg:mb-24">
         <div className="bg-neutral-lighter rounded-2xl lg:rounded-3xl p-8 lg:p-20 relative overflow-hidden flex items-center border border-neutral-light">

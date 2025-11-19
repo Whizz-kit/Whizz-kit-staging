@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, Zap, BarChart } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const Demo: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -13,6 +14,11 @@ const Demo: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white flex flex-col lg:flex-row">
+      <SEO 
+        title="Demo Aanvragen" 
+        description="Ervaar zelf de stabiliteit en snelheid van het Whizz-kit kassasysteem. Vraag een vrijblijvende demo aan voor uw festival."
+      />
+
       {/* Content Side */}
       <div className="lg:w-5/12 bg-dark text-white flex flex-col p-8 lg:p-16 justify-center">
          <div className="relative z-10">

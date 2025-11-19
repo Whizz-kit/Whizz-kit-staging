@@ -2,10 +2,16 @@ import React from 'react';
 import { cases } from '../data';
 import { Quote, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 
 const Cases: React.FC = () => {
   return (
     <div className="bg-[#FDFDFD] min-h-screen pb-32 pt-32">
+      <SEO 
+        title="Festival Cases & Portfolio" 
+        description="Bekijk hoe Mysteryland, Loveland en Decibel vertrouwen op Whizz-kit voor foutloze festivalbetalingen en crowd management."
+      />
+
       {/* Header */}
       <div className="container mx-auto px-4 lg:px-12 max-w-screen-2xl mb-12 lg:mb-16">
         <div className="bg-dark rounded-2xl lg:rounded-3xl p-8 lg:p-20 relative overflow-hidden shadow-2xl">

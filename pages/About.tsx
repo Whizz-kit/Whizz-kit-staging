@@ -2,10 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Target, Heart } from 'lucide-react';
 import { assets, team } from '../data';
+import SEO from '../components/SEO';
 
 const About: React.FC = () => {
   return (
     <div className="bg-white min-h-screen pb-20">
+      <SEO 
+        title="Over ons - Het team achter Whizz-kit" 
+        description="Opgericht door festivalexperts en tech-specialisten. Wij bouwen de technologie die festivals laat draaien. Ontmoet het team."
+      />
+
       {/* Hero - Refined */}
       <div className="relative bg-dark text-white pt-40 pb-32 overflow-hidden">
          <img src={assets.vision} alt="Whizz-kit Team Vision" className="absolute inset-0 w-full h-full object-cover opacity-30 scale-105" />

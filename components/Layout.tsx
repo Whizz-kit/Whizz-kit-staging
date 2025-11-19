@@ -53,18 +53,18 @@ const Layout: React.FC<{ children: React.ReactNode; hideHeaderFooter?: boolean }
     <div className="min-h-screen flex flex-col bg-[#FDFDFD]">
       {/* Floating Navigation - Matches Content Width */}
       <header className="fixed top-4 left-0 right-0 z-50 flex justify-center px-4 lg:px-12 pointer-events-none">
-        <div className={`w-full max-w-screen-2xl bg-white/90 backdrop-blur-xl border border-white/20 shadow-xl rounded-2xl h-16 lg:h-20 flex items-center justify-between px-4 lg:px-6 pointer-events-auto transition-all duration-300 ${scrolled ? 'shadow-2xl' : 'shadow-xl'}`}>
+        <div className={`w-full max-w-screen-2xl bg-white/90 backdrop-blur-xl border border-white/20 shadow-xl rounded-2xl h-16 lg:h-20 flex items-center justify-between px-4 lg:px-8 pointer-events-auto transition-all duration-300 ${scrolled ? 'shadow-2xl' : 'shadow-xl'}`}>
             
-            {/* Logo */}
+            {/* Logo - Increased size for mobile (h-10) */}
             <Link to="/" className="flex items-center gap-3 group">
-               <img src={assets.logoDark} alt="Whizz-kit Logo" className="h-6 lg:h-10 w-auto object-contain" />
+               <img src={assets.logoDark} alt="Whizz-kit Logo" className="h-10 lg:h-10 w-auto object-contain" />
             </Link>
 
-            {/* Desktop Nav */}
+            {/* Desktop Nav - Increased font size to text-base */}
             <div className="hidden lg:flex items-center gap-1">
               <Link 
                 to="/" 
-                className={`px-5 py-2 rounded-full text-sm font-bold transition-all font-sans ${isActive('/') ? 'bg-neutral-lighter text-dark' : 'text-neutral-text hover:text-dark hover:bg-neutral-lighter'}`}
+                className={`px-5 py-2 rounded-full text-base font-bold transition-all font-sans ${isActive('/') ? 'bg-neutral-lighter text-dark' : 'text-neutral-text hover:text-dark hover:bg-neutral-lighter'}`}
               >
                 Home
               </Link>
@@ -72,7 +72,7 @@ const Layout: React.FC<{ children: React.ReactNode; hideHeaderFooter?: boolean }
               {/* Mega Menu Trigger */}
               <div className="relative group">
                 <button 
-                  className={`flex items-center gap-1 px-5 py-2 rounded-full text-sm font-bold transition-all font-sans group-hover:bg-neutral-lighter ${isActive('/oplossingen') ? 'bg-neutral-lighter text-dark' : 'text-neutral-text hover:text-dark'}`}
+                  className={`flex items-center gap-1 px-5 py-2 rounded-full text-base font-bold transition-all font-sans group-hover:bg-neutral-lighter ${isActive('/oplossingen') ? 'bg-neutral-lighter text-dark' : 'text-neutral-text hover:text-dark'}`}
                 >
                   Oplossingen <ChevronDown size={14} className="transition-transform group-hover:rotate-180" />
                 </button>
@@ -129,19 +129,19 @@ const Layout: React.FC<{ children: React.ReactNode; hideHeaderFooter?: boolean }
 
               <Link 
                 to="/cases" 
-                className={`px-5 py-2 rounded-full text-sm font-bold transition-all font-sans ${isActive('/cases') ? 'bg-neutral-lighter text-dark' : 'text-neutral-text hover:text-dark hover:bg-neutral-lighter'}`}
+                className={`px-5 py-2 rounded-full text-base font-bold transition-all font-sans ${isActive('/cases') ? 'bg-neutral-lighter text-dark' : 'text-neutral-text hover:text-dark hover:bg-neutral-lighter'}`}
               >
                 Cases
               </Link>
               <Link 
                 to="/blog" 
-                className={`px-5 py-2 rounded-full text-sm font-bold transition-all font-sans ${isActive('/blog') ? 'bg-neutral-lighter text-dark' : 'text-neutral-text hover:text-dark hover:bg-neutral-lighter'}`}
+                className={`px-5 py-2 rounded-full text-base font-bold transition-all font-sans ${isActive('/blog') ? 'bg-neutral-lighter text-dark' : 'text-neutral-text hover:text-dark hover:bg-neutral-lighter'}`}
               >
                 Blog
               </Link>
               <Link 
                 to="/over-ons" 
-                className={`px-5 py-2 rounded-full text-sm font-bold transition-all font-sans ${isActive('/over-ons') ? 'bg-neutral-lighter text-dark' : 'text-neutral-text hover:text-dark hover:bg-neutral-lighter'}`}
+                className={`px-5 py-2 rounded-full text-base font-bold transition-all font-sans ${isActive('/over-ons') ? 'bg-neutral-lighter text-dark' : 'text-neutral-text hover:text-dark hover:bg-neutral-lighter'}`}
               >
                 Over ons
               </Link>
@@ -151,13 +151,13 @@ const Layout: React.FC<{ children: React.ReactNode; hideHeaderFooter?: boolean }
             <div className="hidden lg:flex items-center gap-3">
               <Link 
                  to="/contact" 
-                 className="px-5 py-2.5 text-sm font-bold text-dark hover:text-primary transition-colors font-display"
+                 className="px-5 py-2.5 text-base font-bold text-dark hover:text-primary transition-colors font-display"
               >
                 Contact
               </Link>
               <Link 
                 to="/demo" 
-                className="bg-secondary text-white px-6 py-2.5 rounded-xl text-sm font-bold font-display hover:bg-secondary-hover transition-colors shadow-sm"
+                className="bg-secondary text-white px-6 py-2.5 rounded-xl text-base font-bold font-display hover:bg-secondary-hover transition-colors shadow-sm"
               >
                 Demo aanvragen
               </Link>
@@ -169,18 +169,19 @@ const Layout: React.FC<{ children: React.ReactNode; hideHeaderFooter?: boolean }
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
             >
-              {isMenuOpen ? <X size={24} strokeWidth={2.5} /> : <Menu size={24} strokeWidth={2.5} />}
+              {isMenuOpen ? <X size={28} strokeWidth={2.5} /> : <Menu size={28} strokeWidth={2.5} />}
             </button>
         </div>
       </header>
 
-      {/* Mobile Menu Overlay */}
-      <div className={`fixed inset-0 bg-white z-40 lg:hidden transition-transform duration-300 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+      {/* Mobile Menu Overlay - Slide from top */}
+      <div className={`fixed inset-0 bg-white/95 backdrop-blur-xl z-40 lg:hidden transition-transform duration-500 cubic-bezier(0.4, 0, 0.2, 1) ${isMenuOpen ? 'translate-y-0' : '-translate-y-full'}`}>
+        {/* Added pt-28 to ensure content starts below the floating header */}
         <div className="flex flex-col pt-28 px-6 h-full pb-10 overflow-y-auto">
           <nav className="flex flex-col gap-2 text-2xl font-display font-bold text-dark">
-            <Link to="/" className="py-4 border-b border-neutral-lighter">Home</Link>
+            <Link to="/" className="py-4 border-b border-neutral-light">Home</Link>
             
-            <div className="py-4 border-b border-neutral-lighter">
+            <div className="py-4 border-b border-neutral-light">
               <button 
                 onClick={() => setIsSolutionsOpen(!isSolutionsOpen)}
                 className="flex items-center justify-between w-full"
@@ -209,16 +210,16 @@ const Layout: React.FC<{ children: React.ReactNode; hideHeaderFooter?: boolean }
               </div>
             </div>
 
-            <Link to="/cases" className="py-4 border-b border-neutral-lighter">Cases</Link>
-            <Link to="/blog" className="py-4 border-b border-neutral-lighter">Blog</Link>
-            <Link to="/over-ons" className="py-4 border-b border-neutral-lighter">Over ons</Link>
-            <Link to="/contact" className="py-4 border-b border-neutral-lighter">Contact</Link>
+            <Link to="/cases" className="py-4 border-b border-neutral-light">Cases</Link>
+            <Link to="/blog" className="py-4 border-b border-neutral-light">Blog</Link>
+            <Link to="/over-ons" className="py-4 border-b border-neutral-light">Over ons</Link>
+            <Link to="/contact" className="py-4 border-b border-neutral-light">Contact</Link>
           </nav>
           
           <div className="mt-auto flex flex-col gap-4 pt-8">
             <Link 
               to="/demo" 
-              className="w-full text-center bg-secondary text-white py-4 rounded-xl font-display font-bold text-xl"
+              className="w-full text-center bg-secondary text-white py-4 rounded-xl font-display font-bold text-xl shadow-lg"
             >
               Demo aanvragen
             </Link>

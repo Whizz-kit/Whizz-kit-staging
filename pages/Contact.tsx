@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, CheckCircle, ArrowRight } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const Contact: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -10,8 +11,29 @@ const Contact: React.FC = () => {
     window.scrollTo(0, 0);
   };
 
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Whizz-kit",
+    "image": "https://ik.imagekit.io/fto/whizz-kit/whizz-kit-logo-vibrant-blue%20(1).png",
+    "telephone": "+31262022490",
+    "email": "info@whizz-kit.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Arnhem",
+      "addressCountry": "NL"
+    },
+    "url": "https://whizz-kit.com/contact"
+  };
+
   return (
     <div className="bg-white min-h-screen">
+       <SEO 
+          title="Contact opnemen" 
+          description="Heeft u vragen over onze festival betaaloplossingen? Neem contact op met ons team in Arnhem."
+          schema={localBusinessSchema}
+       />
+
        <div className="flex flex-col lg:flex-row min-h-screen">
           {/* Info Side */}
           <div className="lg:w-5/12 bg-dark text-white p-8 lg:p-20 flex flex-col justify-center">

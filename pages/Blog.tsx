@@ -2,10 +2,16 @@ import React from 'react';
 import { blogPosts } from '../data';
 import { Clock, ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 
 const Blog: React.FC = () => {
   return (
     <div className="bg-[#FDFDFD] min-h-screen pb-32 pt-32">
+      <SEO 
+        title="Inzichten & Nieuws" 
+        description="Blijf op de hoogte van de laatste trends in festivalbetalingen, wetgeving (SUP) en Whizz-kit product updates."
+      />
+
       {/* Header */}
       <div className="container mx-auto px-4 lg:px-12 max-w-screen-2xl mb-24">
          <div className="bg-neutral-lighter border border-neutral-light rounded-3xl p-12 lg:p-20">
