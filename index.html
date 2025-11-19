@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="nl" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Whizz-kit — Offline-first betaaloplossingen voor festivals</title>
+    <meta name="description" content="Betrouwbaar betalen zonder internet. Cards, munten, RFID, QR-redeem en live analytics in één platform." />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                DEFAULT: '#6157E5', // Brand #1
+                hover: '#4F44E0',
+                light: '#8077FF',   // Brand #1ALT
+                pale: '#A59FEA',    // Brand #2
+                ultralight: '#EEEEFF' // New for block backgrounds
+              },
+              secondary: {
+                DEFAULT: '#FF4362', // Brand #3
+                hover: '#E63250',
+                light: '#FF7D90',   // Brand #4
+              },
+              dark: {
+                DEFAULT: '#171640', // Brand #5
+                alt: '#000000',     // Brand #5ALT
+                blue: '#181E54',    // Brand #6
+              },
+              neutral: {
+                text: '#404040',    // Darker for better readability (was #696969)
+                light: '#E5E5E5',   // Darker border for better definition
+                lighter: '#F4F4F5', // Brand #9 (Tweaked for contrast)
+                white: '#FFFFFF',   // Brand #10
+                surface: '#F9FAFB'
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              display: ['Figtree', 'sans-serif'],
+              mono: ['Fira Code', 'monospace'],
+            },
+            borderRadius: {
+              'xl': '12px', // Tighter radius for "block" feel
+              '2xl': '16px',
+              '3xl': '24px',
+            },
+            boxShadow: {
+              'hard': '4px 4px 0px 0px rgba(23, 22, 64, 0.1)', // Hard shadow for emphasis without blur
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@500;600;700;800&family=Fira+Code:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      body { font-family: 'Inter', sans-serif; background-color: #FFFFFF; color: #171640; }
+      h1, h2, h3, h4, h5, h6 { font-family: 'Figtree', sans-serif; }
+      .font-mono { font-family: 'Fira Code', monospace; }
+      
+      /* Remove default focus outlines and replace with solid style */
+      *:focus-visible {
+        outline: 2px solid #6157E5;
+        outline-offset: 2px;
+      }
+      
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #F4F4F5; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #D4D4D8; 
+        border-radius: 5px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #A1A1AA; 
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.6",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0"
+  }
+}
+</script>
+</head>
+  <body class="antialiased">
+    <div id="root"></div>
+  </body>
+</html>
