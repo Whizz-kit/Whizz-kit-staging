@@ -57,8 +57,8 @@ const Home: React.FC = () => {
                 <span className="text-white">en continuïteit.</span>
               </h1>
               
-              <p className="font-sans text-lg lg:text-2xl text-primary-pale mb-8 lg:mb-12 max-w-2xl leading-relaxed font-medium antialiased">
-                Volledig geïntegreerde betaaloplossingen voor festivals: offline-first, snel en foutloos – zelfs bij uitval van stroom of internet.
+              <p className="font-sans text-lg lg:text-2xl text-white/80 mb-8 lg:mb-12 max-w-2xl leading-relaxed font-medium antialiased">
+                Volledig geïntegreerde betaaloplossingen voor festivals: offline-first, snel en foutloos, zelfs bij uitval van stroom of internet.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
